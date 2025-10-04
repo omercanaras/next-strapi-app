@@ -55,12 +55,12 @@ export default function Navbar() {
       <Link href="/leistungen" className="hover:underline hover:text-black">
         Leistungen
       </Link>
-      <Link href="/stellenangebote" className="hover:underline hover:text-black">
+      {/* <Link href="/stellenangebote" className="hover:underline hover:text-black">
         Stellenangebote
-      </Link>
-      {/* <Link href="/angebotsanfrage" className="hover:underline hover:text-black">
-        Angebotsanfrage
       </Link> */}
+      <Link href="/angebotsanfrage" className="hover:underline hover:text-black">
+        Angebotsanfrage
+      </Link>
       <Link href="/rufservice" className="hover:underline hover:text-black">
         Rückrufservice
       </Link>
