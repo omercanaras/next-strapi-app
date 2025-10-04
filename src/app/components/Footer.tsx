@@ -1,43 +1,59 @@
+import Link from "next/link";
 import { FaFacebookF, FaInstagram, FaEnvelope } from "react-icons/fa";
 
 export default function Footer() {
   return (
     <footer className="bg-black text-white py-10 px-4">
       <div className="max-w-6xl mx-auto flex flex-col items-center text-center space-y-6">
-
         {/* Şirket Bilgisi */}
-        <div className="text-sm">
-          Karahan Dienstleistungen Gbr, Heinrich-Böll-Weg 7 , 72474 Winterlingen
+        <div className="text-sm text-gray-300">
+          Karahan Dienstleistungen GbR, Heinrich-Böll-Weg 7, 72474 Winterlingen
         </div>
 
-        {/* Linkler */}
-        <div className="flex flex-col sm:flex-row sm:space-x-4 space-y-2 sm:space-y-0 text-sm">
-          <a href="/" className="hover:underline">
+        {/* Sayfa Linkleri */}
+        <div className="flex flex-col sm:flex-row sm:space-x-6 space-y-2 sm:space-y-0 text-sm">
+          <Link href="/" className="hover:underline">
             Startseite
-          </a>
-          <a href="/impressum" className="hover:underline">
+          </Link>
+          <Link href="/impressum" className="hover:underline">
             Impressum
-          </a>
-          <a href="/datenschutz" className="hover:underline">
+          </Link>
+          <Link href="/datenschutz" className="hover:underline">
             Datenschutz
-          </a>
+          </Link>
         </div>
 
         {/* Sosyal Medya */}
-        <div className="flex space-x-4 text-xl">
-          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+        <div className="flex space-x-5 text-xl mt-2">
+          <a
+            href="https://facebook.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Facebook"
+            className="hover:text-gray-400 transition"
+          >
             <FaFacebookF />
           </a>
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://instagram.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+            className="hover:text-gray-400 transition"
+          >
             <FaInstagram />
           </a>
-          <a href="mailto:info@ka-dl.de">
+          <a
+            href="mailto:info@ka-dl.de"
+            aria-label="E-Mail senden"
+            className="hover:text-gray-400 transition"
+          >
             <FaEnvelope />
           </a>
         </div>
 
         {/* Logo */}
-        <div className="text-5xl font-bold tracking-widest flex items-center justify-center">
+        <div className="text-5xl font-bold tracking-widest flex items-center justify-center mt-4">
           <span>K</span>
           <span className="mx-2 text-4xl">|</span>
           <span>D</span>
