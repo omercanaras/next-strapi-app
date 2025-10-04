@@ -1,0 +1,33 @@
+[
+    {
+      "id": 1,
+      "Titel": "Haushaltshilfe (m/w/d)",
+      "Slug": "haushaltshilfe",
+      "Standorte": "Winterlingen",
+      "Beschreibung": [
+        "Wir suchen eine zuverlässige und freundliche Unterstützung im Haushalt. Du hilfst unseren Kunden bei alltäglichen Aufgaben wie Reinigung, Wäsche und Organisation.",
+        "Wenn du ein Herz für Menschen hast und gerne Verantwortung übernimmst, freuen wir uns auf deine Bewerbung!"
+      ],
+      "aufgaben": [
+        { "id": 1, "Text": "Unterstützung im Haushalt (Putzen, Waschen, Bügeln)" },
+        { "id": 2, "Text": "Einkäufe erledigen und Mahlzeiten vorbereiten" },
+        { "id": 3, "Text": "Begleitung älterer Menschen im Alltag" }
+      ],
+      "anforderungen": [
+        { "id": 1, "Text": "Zuverlässigkeit und Verantwortungsbewusstsein" },
+        { "id": 2, "Text": "Erfahrung in hauswirtschaftlichen Tätigkeiten von Vorteil" }
+      ],
+      "wirBieten": [
+        { "id": 1, "Text": "Ein herzliches Team mit familiärer Atmosphäre" },
+        { "id": 2, "Text": "Flexible Arbeitszeiten" },
+        { "id": 3, "Text": "Faire Bezahlung" }
+      ],
+      "bewerbungText": [
+        "Sende deine Bewerbung bitte per E-Mail an info@familie-karahan.de.",
+        "Wir freuen uns darauf, dich kennenzulernen!"
+      ],
+      "bild": "/images/job-offer.jpg",
+      "Date": "01.10.2025"
+    }
+  ]
+  

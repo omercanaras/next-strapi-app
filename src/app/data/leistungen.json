@@ -1,0 +1,26 @@
+[
+    {
+      "id": 1,
+      "Reihenfolge": 1,
+      "Titel": "Alltagsbegleitung nach § 45ab SGB XI",
+      "Beschreibung": "Jeder mit einem Pflegegrad (1-5) hat einen Anspruch auf Entlastungsleistungen, dessen Kosten von der Pflegekasse übernommen werden. Gerne unterstützen wir Sie mit unserem Service im Alltag. Dabei suchen Sie aus, welche Leistung für Sie in Frage kommt: Unterhaltsreinigung, Einkäufe erledigen, Botengänge, Hol- und Bringdienste, Korrespondenz mit Behörden etc.",
+      "Bild": "/images/alltagsbegleitung.jpeg"
+    },
+    {
+      "id": 2,
+      "Reihenfolge": 2,
+      "Titel": "Grundreinigung",
+      "Beschreibung": "Eine Grundreinigung findet meistens in größeren Zeitabständen statt, zum Beispiel auch vor oder nach einem Umzug. Es werden dabei alle Bereiche besonders intensiv gereinigt und die Oberflächen von hartnäckigen Verschmutzungen befreit.",
+
+      "Bild": "/images/grundreinigung.jpeg"
+    },
+    {
+      "id": 3,
+      "Reihenfolge": 3,
+      "Titel": "Private Haushaltsreinigung",
+      "Beschreibung": "Sie genießen den Feierabend – die Reinigung übernehmen wir! Ob einmalig oder in regelmäßigen Zeitabständen, Sie bestimmen, wann und was gereinigt werden soll. In manchen Fällen übernimmt die Krankenkasse die Kosten, zum Beispiel nach einem Unfall, einer Operation oder sogar im Wochenbett. Dazu können wir Sie gerne kostenlos und unverbindlich beraten.",
+
+      "Bild": "/images/private_haushalte.jpeg"
+    }
+  ]
+  
