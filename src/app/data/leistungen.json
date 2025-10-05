@@ -1,19 +1,16 @@
 [
-    {
-      "id": 1,
-      "Reihenfolge": 1,
-      "Titel": "Alltagsbegleitung nach § 45ab SGB XI",
-      "Beschreibung": "Jeder mit einem Pflegegrad (1-5) hat einen Anspruch auf Entlastungsleistungen, dessen Kosten von der Pflegekasse übernommen werden. Gerne unterstützen wir Sie mit unserem Service im Alltag. Dabei suchen Sie aus, welche Leistung für Sie in Frage kommt: Unterhaltsreinigung, Einkäufe erledigen, Botengänge, Hol- und Bringdienste, Korrespondenz mit Behörden etc.",
-      "Bild": "/images/alltagsbegleitung.jpeg"
-    },
-  
-    {
-      "id": 2,
-      "Reihenfolge": 2,
-      "Titel": "Unsere Leistungen",
-      "Beschreibung": "Unsere Betreuungs- und Reinigungsleistungen richten sich nach Ihren individuellen Bedürfnissen und Wünschen. Wir übernehmen für Sie Einkäufe, Botengänge, Hol- und Bringdienste sowie die Korrespondenz mit Behörden. Darüber hinaus bieten wir professionelle Unterhaltsreinigung an. \n\nWarum KD-Dienstleistungen? Wir stehen für persönliche Betreuung, flexible Einsatzzeiten und faire Preisgestaltung. Unser erfahrenes und vertrauenswürdiges Team gewährleistet eine zuverlässige Unterstützung im Alltag. Eine Abrechnung über die Pflegekasse ist gemäß §45a SGB XI möglich.",
-
-      "Bild": "/images/private_haushalte.jpeg"
-    }
-  ]
-  
+  {
+    "id": 1,
+    "Reihenfolge": 1,
+    "Titel": "Alltagsbegleitung nach § 45ab SGB XI",
+    "Beschreibung": "Mit einem Pflegegrad (1-5) haben Sie Anspruch auf Entlastungsleistungen, die von der Pflegekasse übernommen werden. Wir helfen Ihnen im Alltag - individuell, zuverlässig und mit Herz. Ob im Haushalt, bei Besorgungen oder organisatorischen Aufgaben: Sie entscheiden, welche Unterstützung für Sie sinnvoll ist. Wir kümmern uns darum - persönlich und engagiert. Sprechen Sie uns an - wir beraten Sie gerne.",
+    "Bild": "/images/alltagsbegleitung.jpeg"
+  },
+  {
+    "id": 2,
+    "Reihenfolge": 2,
+    
+    "Beschreibung": "<div class='flex flex-col md:flex-row '>\n  <div class='flex-1'>\n    <strong class='block text-lg mb-2'>🔹 Unsere Leistungen</strong>\n    <ul class='list-disc list-inside space-y-1 text-sm md:text-base'>\n      <li>Einkäufe erledigen</li>\n      <li>Botengänge</li>\n      <li>Hol- und Bringdienste</li>\n      <li>Korrespondenz mit Behörden</li>\n      <li>Unterhaltsreinigung</li>\n    </ul>\n  </div>\n  <div class='flex-1'>\n    <strong class='block text-lg mb-2'>🔹 Warum KD-Dienstleistungen?</strong>\n    <ul class='list-disc list-inside space-y-1 text-sm md:text-base'>\n      <li>Persönliche Betreuung nach Ihren Wünschen</li>\n      <li>Flexible Einsatzzeiten & faire Preise</li>\n      <li>Erfahrenes und vertrauenswürdiges Team</li>\n      <li>Abrechnung über die Pflegekasse möglich (§45a SGB XI)</li>\n    </ul>\n  </div>\n</div>",
+    "Bild": "/images/private_haushalte.jpeg"
+  }
+]
