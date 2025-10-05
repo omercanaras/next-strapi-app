@@ -1,0 +1,32 @@
+{
+    "title": "Datenschutzerklärung",
+    "intro": "Wir nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Nachfolgend informieren wir Sie über die Erhebung, Verarbeitung und Nutzung personenbezogener Daten auf dieser Website.",
+    "sections": [
+      {
+        "heading": "1. Verantwortliche Stelle",
+        "content": "Karahan Dienstleistungen GbR, Heinrich-Böll-Weg 7, 72474 Winterlingen, Deutschland. Kontakt: info@karahan-dienstleistungen.de"
+      },
+      {
+        "heading": "2. Erhebung und Speicherung personenbezogener Daten",
+        "content": "Wir verarbeiten personenbezogene Daten, die Sie uns über Kontaktformulare oder per E-Mail mitteilen (z.B. Name, E-Mail-Adresse)."
+      },
+      {
+        "heading": "3. Verwendung von Cookies",
+        "content": "Diese Website verwendet Cookies, um die Benutzerfreundlichkeit zu verbessern. Sie können Cookies in Ihren Browsereinstellungen deaktivieren."
+      },
+      {
+        "heading": "4. Analyse-Tools",
+        "content": "Wir nutzen Google Analytics zur Analyse der Nutzung unserer Website. Die IP-Adresse wird anonymisiert. Mehr Informationen: https://policies.google.com/privacy"
+      },
+      {
+        "heading": "5. Hosting",
+        "content": "Unsere Website wird auf europäischen Servern gehostet. Die Datenverarbeitung erfolgt nach DSGVO-Richtlinien."
+      },
+      {
+        "heading": "6. Ihre Rechte",
+        "content": "Sie haben jederzeit das Recht auf Auskunft, Berichtigung, Löschung und Einschränkung der Verarbeitung Ihrer Daten sowie auf Datenübertragbarkeit und Widerspruch."
+      }
+    ],
+    "lastUpdated": "05.10.2025"
+  }
+  

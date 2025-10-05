@@ -1,0 +1,52 @@
+{
+    "logo": {
+      "titleLeft": "K",
+      "titleRight": "D",
+      "subtitle": "Karahan Dienstleistungen"
+    },
+    "contactInfo": [
+      {
+        "type": "time",
+        "icon": "FaClock",
+        "text": "Mo–Fr. 9 – 17 Uhr",
+        "enabled": true
+      },
+      {
+        "type": "phone",
+        "icon": "FaPhone",
+        "text": "0173 795 09 33",
+        "href": "tel:01737950933",
+        "enabled": true
+      },
+      {
+        "type": "email",
+        "icon": "FaEnvelope",
+        "text": "info@ka-dl.de",
+        "href": "mailto:info@ka-dl.de",
+        "enabled": true
+      }
+    ],
+    "menuItems": [
+      {
+        "label": "Über uns",
+        "href": "/ueberuns",
+        "enabled": true
+      },
+      {
+        "label": "Leistungen",
+        "href": "/leistungen",
+        "enabled": true
+      },
+      {
+        "label": "Angebotsanfrage",
+        "href": "/angebotsanfrage",
+        "enabled": true
+      },
+      {
+        "label": "Rückrufservice",
+        "href": "/rufservice",
+        "enabled": true
+      }
+    ]
+  }
+  

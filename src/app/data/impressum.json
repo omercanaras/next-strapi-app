@@ -1,0 +1,19 @@
+{
+    "title": "Impressum",
+    "companyName": "Karahan Dienstleistungen GbR",
+    "owner": "Karahan Dienstleistungen",
+    "address": {
+      "street": "Heinrich-Böll-Weg 7",
+      "city": "Winterlingen",
+      "zip": "72474",
+      "country": "Deutschland"
+    },
+    "contact": {
+      "email": "info@ka-dl.de",
+      "phone": "+49 173 7950933"
+    },
+    "vatId": "DE123456789",
+    "responsible": "Gülhan Karahan(Inhaber)",
+    "disclaimer": "Trotz sorgfältiger inhaltlicher Kontrolle übernehmen wir keine Haftung für die Inhalte externer Links. Für den Inhalt der verlinkten Seiten sind ausschließlich deren Betreiber verantwortlich."
+  }
+  

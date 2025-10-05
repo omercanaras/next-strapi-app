@@ -1,0 +1,19 @@
+{
+    "pageTitle": "Rückrufservice",
+    "formTitle": "Wir rufen Sie gerne zurück!",
+    "fields": [
+      {
+        "name": "name",
+        "label": "Name",
+        "placeholder": "Ihr Name",
+        "required": true
+      },
+      {
+        "name": "telefon",
+        "label": "Telefonnummer",
+        "placeholder": "z. B. 01737950933",
+        "required": true
+      }
+    ],
+    "buttonText": "Rückruf anfordern"
+  }

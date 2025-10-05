@@ -1,0 +1,50 @@
+{
+    "companyAddress": "Karahan Dienstleistungen GbR, Heinrich-Böll-Weg 7, 72474 Winterlingen",
+    "pageLinks": [
+      {
+        "label": "Startseite",
+        "href": "/",
+        "enabled": true
+      },
+      {
+        "label": "Impressum",
+        "href": "/impressum",
+        "enabled": true
+      },
+      {
+        "label": "Datenschutz",
+        "href": "/datenschutz",
+        "enabled": true
+      }
+    ],
+    "socialLinks": [
+      {
+        "platform": "facebook",
+        "icon": "FaFacebookF",
+        "href": "https://facebook.com",
+        "ariaLabel": "Facebook",
+        "enabled": true
+      },
+      {
+        "platform": "instagram",
+        "icon": "FaInstagram",
+        "href": "https://instagram.com",
+        "ariaLabel": "Instagram",
+        "enabled": true
+      },
+      {
+        "platform": "email",
+        "icon": "FaEnvelope",
+        "href": "mailto:info@ka-dl.de",
+        "ariaLabel": "E-Mail senden",
+        "enabled": true
+      }
+    ],
+    "logo": {
+      "left": "K",
+      "separator": "|",
+      "right": "D",
+      "title": "KARAHAN DIENSTLEISTUNGEN"
+    }
+  }
+  

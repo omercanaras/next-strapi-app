@@ -1,107 +1,119 @@
 "use client";
 
 import { useState } from "react";
+import formConfig from "@/app/data/angebotsanfrage.json";
 
 export default function AngebotsanfragePage() {
-  const [formData, setFormData] = useState({
-    typ: "gewerblich",
-    name: "",
-    email: "",
-    telefon: "",
-    adresse: "",
-    leistung: "",
-    flaeche: "",
-    intervall: "",
-    zeit: "",
-    beginn: "",
-    nachricht: "",
+  const defaultTyp = formConfig.anfrageTyp.default || "";
+  const initialState: Record<string, string> = {
+    [formConfig.anfrageTyp.name]: defaultTyp,
+  };
+  formConfig.fields.forEach((field) => {
+    initialState[field.name] = "";
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const [formData, setFormData] = useState<Record<string, string>>(initialState);
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+  ) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log("Form submitted", formData);
-    // Burada POST işlemi yapılabilir
+    // API'ye gönderilebilir
   };
 
   return (
     <div className="max-w-4xl mx-auto py-16 px-4">
-      <h1 className="text-3xl font-bold text-gray-800 mb-10 text-center">Angebotsanfrage</h1>
+      <h1 className="text-3xl font-bold text-gray-800 mb-10 text-center">
+        {formConfig.pageTitle}
+      </h1>
 
-      <form onSubmit={handleSubmit} className="bg-white p-6 rounded shadow-md space-y-6 border border-gray-200">
-
-        {/* Anfrage Typ */}
+      <form
+        onSubmit={handleSubmit}
+        className="bg-white p-6 rounded shadow-md space-y-6 border border-gray-200"
+      >
+        {/* Anfrage Typ (radio) */}
         <div>
-          <label className="block font-semibold mb-1">Unverbindliche Angebotsanfrage</label>
+          <label className="block font-semibold mb-1">
+            {formConfig.formTitle}
+          </label>
           <div className="flex gap-6">
-            <label className="flex items-center gap-2">
-              <input
-                type="radio"
-                name="typ"
-                value="gewerblich"
-                checked={formData.typ === "gewerblich"}
-                onChange={handleChange}
-              />
-              Gewerbliche Anfrage
-            </label>
-            <label className="flex items-center gap-2">
-              <input
-                type="radio"
-                name="typ"
-                value="privat"
-                checked={formData.typ === "privat"}
-                onChange={handleChange}
-              />
-              Private Anfrage
-            </label>
+            {formConfig.anfrageTyp.options.map((option, idx) => (
+              <label key={idx} className="flex items-center gap-2">
+                <input
+                  type="radio"
+                  name={formConfig.anfrageTyp.name}
+                  value={option.value}
+                  checked={formData[formConfig.anfrageTyp.name] === option.value}
+                  onChange={handleChange}
+                />
+                {option.label}
+              </label>
+            ))}
           </div>
         </div>
 
-        {/* Kişisel Bilgiler */}
+        {/* Dinamik Alanlar */}
         <div className="grid md:grid-cols-2 gap-4">
-          <input type="text" name="name" placeholder="Name *" required className="input" onChange={handleChange} />
-          <input type="text" name="adresse" placeholder="Adresse * (mind. PLZ Ort)" required className="input" onChange={handleChange} />
-          <input type="email" name="email" placeholder="E-Mail *" required className="input" onChange={handleChange} />
-          <input type="text" name="telefon" placeholder="Telefon" className="input" onChange={handleChange} />
-        </div>
+          {formConfig.fields.map((field, idx) => {
+            if (field.type === "select") {
+              return (
+                <select
+                  key={idx}
+                  name={field.name}
+                  className="input"
+                  onChange={handleChange}
+                  value={formData[field.name]}
+                >
+                  <option value="">{field.placeholder}</option>
+                  {field.options?.map((opt, i) => (
+                    <option key={i} value={opt.toLowerCase()}>
+                      {opt}
+                    </option>
+                  ))}
+                </select>
+              );
+            }
 
-        {/* Talep Bilgileri */}
-        <div className="grid md:grid-cols-2 gap-4">
-          <select name="leistung" className="input" onChange={handleChange}>
-            <option value="">Leistung wählen</option>
-            <option value="reinigung">Reinigung</option>
-            <option value="gartenarbeit">Gartenarbeit</option>
-            <option value="pflege">Pflege</option>
-          </select>
+            if (field.type === "textarea") {
+              return (
+                <div key={idx} className="md:col-span-2">
+                  <label
+                    htmlFor={field.name}
+                    className="block font-semibold mb-1"
+                  >
+                    {field.label}
+                  </label>
+                  <textarea
+                    name={field.name}
+                    rows={field.rows || 4}
+                    placeholder={field.placeholder}
+                    className="input w-full"
+                    onChange={handleChange}
+                    value={formData[field.name]}
+                  ></textarea>
+                </div>
+              );
+            }
 
-          <input type="text" name="flaeche" placeholder="Fläche in m²" className="input" onChange={handleChange} />
-
-          <select name="intervall" className="input" onChange={handleChange}>
-            <option value="">Intervall wählen</option>
-            <option value="einmalig">Einmalig</option>
-            <option value="woechentlich">Wöchentlich</option>
-            <option value="monatlich">Monatlich</option>
-          </select>
-
-          <input type="text" name="zeit" placeholder="Zeit (wie viele Stunden)" className="input" onChange={handleChange} />
-
-          <input type="text" name="beginn" placeholder="Beginn (ab wann)" className="input md:col-span-2" onChange={handleChange} />
-        </div>
-
-        {/* Nachricht */}
-        <div>
-          <label htmlFor="nachricht" className="block font-semibold mb-1">Ihre Nachricht</label>
-          <textarea
-            name="nachricht"
-            rows={5}
-            placeholder="Ihre Nachricht an uns"
-            className="input w-full"
-            onChange={handleChange}
-          ></textarea>
+            return (
+              <input
+                key={idx}
+                type={field.type}
+                name={field.name}
+                placeholder={field.placeholder}
+                required={field.required || false}
+                className="input"
+                onChange={handleChange}
+                value={formData[field.name]}
+              />
+            );
+          })}
         </div>
 
         {/* Submit */}
@@ -110,7 +122,7 @@ export default function AngebotsanfragePage() {
             type="submit"
             className="bg-gray-800 text-white px-6 py-2 rounded hover:bg-gray-700 transition"
           >
-            Anfrage senden
+            {formConfig.submitText}
           </button>
         </div>
       </form>

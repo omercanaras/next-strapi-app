@@ -1,65 +1,67 @@
 import Link from "next/link";
-import { FaFacebookF, FaInstagram, FaEnvelope } from "react-icons/fa";
+import {
+  FaFacebookF,
+  FaInstagram,
+  FaEnvelope,
+} from "react-icons/fa";
+import footerData from "@/app/data/footer.json";
+import { JSX } from "react";
+
+// Ikon adlarını React bileşenlerine eşle
+const ICONS: Record<string, JSX.Element> = {
+  FaFacebookF: <FaFacebookF />,
+  FaInstagram: <FaInstagram />,
+  FaEnvelope: <FaEnvelope />,
+};
 
 export default function Footer() {
+  const { companyAddress, pageLinks, socialLinks, logo } = footerData;
+
   return (
     <footer className="bg-black text-white py-10 px-4">
       <div className="max-w-6xl mx-auto flex flex-col items-center text-center space-y-6">
         {/* Şirket Bilgisi */}
         <div className="text-sm text-gray-300">
-          Karahan Dienstleistungen GbR, Heinrich-Böll-Weg 7, 72474 Winterlingen
+          {companyAddress}
         </div>
 
         {/* Sayfa Linkleri */}
         <div className="flex flex-col sm:flex-row sm:space-x-6 space-y-2 sm:space-y-0 text-sm">
-          <Link href="/" className="hover:underline">
-            Startseite
-          </Link>
-          <Link href="/impressum" className="hover:underline">
-            Impressum
-          </Link>
-          <Link href="/datenschutz" className="hover:underline">
-            Datenschutz
-          </Link>
+          {pageLinks
+            .filter((link) => link.enabled)
+            .map((link, idx) => (
+              <Link key={idx} href={link.href} className="hover:underline">
+                {link.label}
+              </Link>
+            ))}
         </div>
 
         {/* Sosyal Medya */}
         <div className="flex space-x-5 text-xl mt-2">
-          <a
-            href="https://facebook.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Facebook"
-            className="hover:text-gray-400 transition"
-          >
-            <FaFacebookF />
-          </a>
-          <a
-            href="https://instagram.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Instagram"
-            className="hover:text-gray-400 transition"
-          >
-            <FaInstagram />
-          </a>
-          <a
-            href="mailto:info@ka-dl.de"
-            aria-label="E-Mail senden"
-            className="hover:text-gray-400 transition"
-          >
-            <FaEnvelope />
-          </a>
+          {socialLinks
+            .filter((link) => link.enabled)
+            .map((link, idx) => (
+              <a
+                key={idx}
+                href={link.href}
+                target={link.href.startsWith("http") ? "_blank" : undefined}
+                rel="noopener noreferrer"
+                aria-label={link.ariaLabel}
+                className="hover:text-gray-400 transition"
+              >
+                {ICONS[link.icon]}
+              </a>
+            ))}
         </div>
 
         {/* Logo */}
         <div className="text-5xl font-bold tracking-widest flex items-center justify-center mt-4">
-          <span>K</span>
-          <span className="mx-2 text-4xl">|</span>
-          <span>D</span>
+          <span>{logo.left}</span>
+          <span className="mx-2 text-4xl">{logo.separator}</span>
+          <span>{logo.right}</span>
         </div>
         <div className="text-sm font-semibold tracking-wider">
-          KARAHAN DIENSTLEISTUNGEN
+          {logo.title}
         </div>
       </div>
     </footer>

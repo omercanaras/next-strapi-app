@@ -1,0 +1,80 @@
+{
+    "pageTitle": "Angebotsanfrage",
+    "formTitle": "Unverbindliche Angebotsanfrage",
+    "submitText": "Anfrage senden",
+    "anfrageTyp": {
+      "name": "typ",
+      "default": "gewerblich",
+      "options": [
+        {
+          "value": "gewerblich",
+          "label": "Gewerbliche Anfrage"
+        },
+        {
+          "value": "privat",
+          "label": "Private Anfrage"
+        }
+      ]
+    },
+    "fields": [
+      {
+        "type": "text",
+        "name": "name",
+        "placeholder": "Name *",
+        "required": true
+      },
+      {
+        "type": "text",
+        "name": "adresse",
+        "placeholder": "Adresse * (mind. PLZ Ort)",
+        "required": true
+      },
+      {
+        "type": "email",
+        "name": "email",
+        "placeholder": "E-Mail *",
+        "required": true
+      },
+      {
+        "type": "text",
+        "name": "telefon",
+        "placeholder": "Telefon",
+        "required": true
+      },
+      {
+        "type": "select",
+        "name": "leistung",
+        "placeholder": "Leistung wählen",
+        "options": ["Reinigung", "Gartenarbeit", "Pflege"]
+      },
+      {
+        "type": "text",
+        "name": "flaeche",
+        "placeholder": "Fläche in m²"
+      },
+      {
+        "type": "select",
+        "name": "intervall",
+        "placeholder": "Intervall wählen",
+        "options": ["Einmalig", "Wöchentlich", "Monatlich"]
+      },
+      {
+        "type": "text",
+        "name": "zeit",
+        "placeholder": "Zeit (wie viele Stunden)"
+      },
+      {
+        "type": "text",
+        "name": "beginn",
+        "placeholder": "Beginn (ab wann)"
+      },
+      {
+        "type": "textarea",
+        "name": "nachricht",
+        "label": "Ihre Nachricht",
+        "placeholder": "Ihre Nachricht an uns",
+        "rows": 5
+      }
+    ]
+  }
+  
