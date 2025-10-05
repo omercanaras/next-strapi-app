@@ -1,11 +1,10 @@
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
-import rueckrufConfig from "@/app/data/rueckrufservice.json"; // JSON'dan alanları alacağız
+import rueckrufConfig from "@/app/data/rueckrufservice.json";
 
 export async function POST(req: Request) {
   const formData = await req.json();
 
-  // Form alanlarını JSON'dan oku ve HTML formatına dönüştür
   const htmlBody = `
     <h2>Neue Rückrufanfrage</h2>
     <ul>
@@ -18,20 +17,21 @@ export async function POST(req: Request) {
     </ul>
   `;
 
-  // Mail gönderici yapılandırması (örnek Gmail)
   const transporter = nodemailer.createTransport({
-    service: "gmail",
+    host: process.env.SMTP_HOST,
+    port: Number(process.env.SMTP_PORT),
+    secure: process.env.SMTP_SECURE === "true", // TLS mi değil mi
     auth: {
       user: process.env.MAIL_USER,
-      pass: process.env.MAIL_PASS
-    }
+      pass: process.env.MAIL_PASS,
+    },
   });
 
   const mailOptions = {
     from: `"Rückrufservice" <${process.env.MAIL_USER}>`,
-    to: process.env.MAIL_RECEIVER, // Sana gönderilsin
+    to: process.env.MAIL_RECEIVER,
     subject: "Neue Rückrufanfrage",
-    html: htmlBody
+    html: htmlBody,
   };
 
   try {
