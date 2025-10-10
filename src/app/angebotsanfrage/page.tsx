@@ -24,7 +24,6 @@ export default function AngebotsanfragePage() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log("Form submitted", formData);
-    // API'ye gönderilebilir
   };
 
   return (
@@ -37,7 +36,6 @@ export default function AngebotsanfragePage() {
         onSubmit={handleSubmit}
         className="bg-white p-6 rounded shadow-md space-y-6 border border-gray-200"
       >
-        {/* Anfrage Typ (radio) */}
         <div>
           <label className="block font-semibold mb-1">
             {formConfig.formTitle}
@@ -58,7 +56,6 @@ export default function AngebotsanfragePage() {
           </div>
         </div>
 
-        {/* Dinamik Alanlar */}
         <div className="grid md:grid-cols-2 gap-4">
           {formConfig.fields.map((field, idx) => {
             if (field.type === "select") {
@@ -116,7 +113,6 @@ export default function AngebotsanfragePage() {
           })}
         </div>
 
-        {/* Submit */}
         <div className="text-center">
           <button
             type="submit"
