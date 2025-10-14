@@ -48,10 +48,10 @@ export default function HomePage() {
       {/* CTA Buton */}
       <div className="text-center mb-10">
         <Link
-          href="/angebotsanfrage"
+          href="/rufservice"
           className="inline-block bg-gray-900 text-white text-sm md:text-base px-6 py-3 rounded hover:bg-gray-800 transition"
         >
-          In nur wenigen Schritten zum individuellen Angebot
+          Wir rufen Sie gerne zurück
         </Link>
       </div>
 
