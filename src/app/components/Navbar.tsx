@@ -25,7 +25,7 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 bg-white shadow">
       {/* ÜST BAR */}
-      <div className="bg-black text-white text-sm py-2 px-4">
+      <div className="bg-green-900 text-white text-sm py-2 px-4">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row md:justify-between md:items-center text-center md:text-left">
           {/* Logo */}
           <div className="flex flex-col items-center">
@@ -78,7 +78,7 @@ export default function Navbar() {
           <div className="md:hidden">
             <button
               onClick={() => setMenuOpen(!menuOpen)}
-              className="text-2xl text-black"
+              className="text-2xl text-green-900"
               aria-label="Menüyü aç/kapat"
             >
               {menuOpen ? <FaTimes /> : <FaBars />}
@@ -93,7 +93,7 @@ export default function Navbar() {
                 <Link
                   key={index}
                   href={item.href}
-                  className="hover:underline hover:text-black"
+                  className="hover:underline hover:text-green-900"
                 >
                   {item.label}
                 </Link>
@@ -111,7 +111,7 @@ export default function Navbar() {
                   <Link
                     key={index}
                     href={item.href}
-                    className="hover:underline hover:text-black"
+                    className="hover:underline hover:text-green-900"
                     onClick={() => setMenuOpen(false)}
                   >
                     {item.label}

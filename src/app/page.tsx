@@ -64,9 +64,9 @@ export default function HomePage() {
         ein. Fordern Sie jetzt Ihr kostenloses und unverbindliches Angebot an!
       </p>
 
-      {/* Hizmet kutuları */}
-      <div className="flex flex-col sm:flex-row justify-center items-center gap-10 mb-12 text-center">
-        {/* PERSONEL */}
+  
+      {/* <div className="flex flex-col sm:flex-row justify-center items-center gap-10 mb-12 text-center">
+      
         <div>
           <Image
             src="/images/personal.jpeg"
@@ -80,7 +80,7 @@ export default function HomePage() {
           </h3>
         </div>
 
-        {/* RUNDUM SERVICE */}
+     
         <div>
           <Image
             src="/images/rundum_service.jpeg"
@@ -93,7 +93,7 @@ export default function HomePage() {
             Alles aus einer Hand
           </h3>
         </div>
-      </div>
+      </div> */}
 
       {/* İkinci Buton */}
       <div className="text-center">
