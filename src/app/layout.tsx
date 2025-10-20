@@ -19,7 +19,7 @@ const geistMono = Geist_Mono({
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://ka-dl.de';
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
+  metadataBase: new URL(siteUrl || 'https://ka-dl.de'),
   title: {
     default: 'Karahan Dienstleistungen – Alltagsbegleiter & Haushaltshilfe in Winterlingen',
     template: '%s | Karahan Dienstleistungen',
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   description:
     'Karahan Dienstleistungen bietet Alltagsbegleitung und hauswirtschaftliche Tätigkeiten in Winterlingen. Zuverlässige Hilfe im Haushalt und Alltag mit Herz und Erfahrung.',
   alternates: {
-    canonical: './',
+    canonical: 'siteUrl',
   },
   openGraph: {
     type: 'website',
