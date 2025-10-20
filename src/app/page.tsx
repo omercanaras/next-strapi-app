@@ -32,7 +32,7 @@ export default function HomePage() {
     <main className="px-4 py-10 max-w-6xl mx-auto">
       {/* Başlık */}
       <h1 className="text-3xl md:text-4xl font-bold text-center mb-6">
-        KD Dienstleistungen – Ihr Alltagsbegleiter in Winterlingen
+      Karahan Dienstleistungen – Ihr Alltagsbegleiter in Winterlingen
       </h1>
 
       <div className="mb-8 flex justify-center">
