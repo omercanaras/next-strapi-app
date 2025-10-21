@@ -4,13 +4,13 @@ import type { Metadata } from "next";
 
 // ✅ SEO Metadata
 export const metadata: Metadata = {
-  title: "Karahan Dienstleistungen – Alltagsbegleiter & Haushaltshilfe in Winterlingen",
+  title: "KD Dienstleistungen – Alltagsbegleiter & Haushaltshilfe in Winterlingen",
   description:
-    "Karahan Dienstleistungen bietet Alltagsbegleitung und hauswirtschaftliche Tätigkeiten in Winterlingen. Zuverlässige Hilfe im Haushalt und Alltag mit Herz und Erfahrung.",
+    "KD Dienstleistungen bietet Alltagsbegleitung und hauswirtschaftliche Tätigkeiten in Winterlingen. Zuverlässige Hilfe im Haushalt und Alltag mit Herz und Erfahrung.",
   openGraph: {
     type: "website",
     url: "https://ka-dl.de",
-    title: "Karahan Dienstleistungen – Alltagsbegleiter & Haushaltshilfe in Winterlingen",
+    title: "KD Dienstleistungen – Alltagsbegleiter & Haushaltshilfe in Winterlingen",
     description:
       "Professionelle Haushaltshilfe und Alltagsbegleitung in Winterlingen – zuverlässig, persönlich und engagiert.",
     images: [
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
         url: "https://ka-dl.de/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Karahan Dienstleistungen – Alltagsbegleiter & Haushaltshilfe in Winterlingen",
+        alt: "KD Dienstleistungen – Alltagsbegleiter & Haushaltshilfe in Winterlingen",
       },
     ],
   },
@@ -32,7 +32,7 @@ export default function HomePage() {
     <main className="px-4 py-10 max-w-6xl mx-auto">
       {/* Başlık */}
       <h1 className="text-3xl md:text-4xl font-bold text-center mb-6">
-      Karahan Dienstleistungen – Ihr Alltagsbegleiter in Winterlingen
+      KD Dienstleistungen – Ihr Alltagsbegleiter in Winterlingen
       </h1>
 
       <div className="mb-8 flex justify-center">
