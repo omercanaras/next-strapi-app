@@ -21,36 +21,36 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://ka-dl.de';
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl || 'https://ka-dl.de'),
   title: {
-    default: 'Karahan Dienstleistungen – Alltagsbegleiter & Haushaltshilfe in Winterlingen',
-    template: '%s | Karahan Dienstleistungen',
+    default: 'KD Dienstleistungen – Alltagsbegleiter & Haushaltshilfe in Winterlingen',
+    template: '%s | KD Dienstleistungen',
   },
   description:
-    'Karahan Dienstleistungen bietet Alltagsbegleitung und hauswirtschaftliche Tätigkeiten in Winterlingen. Zuverlässige Hilfe im Haushalt und Alltag mit Herz und Erfahrung.',
+    'KD Dienstleistungen bietet Alltagsbegleitung und hauswirtschaftliche Tätigkeiten in Winterlingen. Zuverlässige Hilfe im Haushalt und Alltag mit Herz und Erfahrung.',
   alternates: {
     canonical: 'siteUrl',
   },
   openGraph: {
     type: 'website',
     url: siteUrl,
-    title: 'Karahan Dienstleistungen – Haushaltshilfe in Winterlingen',
+    title: 'KD Dienstleistungen – Haushaltshilfe in Winterlingen',
     description:
-      'Professionelle Alltagsbegleitung und Haushaltshilfe in Winterlingen. Persönliche Betreuung und hauswirtschaftliche Unterstützung von Karahan Dienstleistungen.',
-    siteName: 'Karahan Dienstleistungen',
+      'Professionelle Alltagsbegleitung und Haushaltshilfe in Winterlingen. Persönliche Betreuung und hauswirtschaftliche Unterstützung von KD Dienstleistungen.',
+    siteName: 'KD Dienstleistungen',
     images: [
       {
         url: `${siteUrl}/og-image.jpg`,
         width: 1200,
         height: 630,
-        alt: 'Karahan Dienstleistungen – Alltagsbegleiter und Haushaltshilfe in Winterlingen',
+        alt: 'KD Dienstleistungen – Alltagsbegleiter und Haushaltshilfe in Winterlingen',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Karahan Dienstleistungen – Haushaltshilfe in Winterlingen',
+    title: 'KD Dienstleistungen – Haushaltshilfe in Winterlingen',
     description:
       'Haushaltshilfe und Alltagsbegleitung in Winterlingen – zuverlässig, persönlich, engagiert. Jetzt Kontakt aufnehmen!',
-    creator: '@karahan_winterlingen', // X hesabın yoksa silebilirsin
+    creator: '@KD_winterlingen', // X hesabın yoksa silebilirsin
     images: [`${siteUrl}/og-image.jpg`],
   },
   verification: {
@@ -72,11 +72,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "LocalBusiness",
-              "name": "Karahan Dienstleistungen",
+              "name": "KD Dienstleistungen",
               "url": siteUrl,
               "logo": `${siteUrl}/logo.png`, // logo varsa public klasöründe olmalı
               "image": `${siteUrl}/og-image.jpg`,
-              "description": "Karahan Dienstleistungen bietet Haushaltshilfe und Alltagsbegleitung in Winterlingen und Umgebung.",
+              "description": "KD Dienstleistungen bietet Haushaltshilfe und Alltagsbegleitung in Winterlingen und Umgebung.",
               "address": {
                 "@type": "PostalAddress",
                 "streetAddress": "Heinrich-Böll-Weg 7", 
@@ -90,8 +90,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 "name": "Winterlingen"
               },
               "sameAs": [
-                "https://www.instagram.com/karahan_dienstleistungen",
-                "https://www.facebook.com/karahan_dienstleistungen"
+                "https://www.instagram.com/KD_dienstleistungen",
+                "https://www.facebook.com/KD_dienstleistungen"
               ]
             }),
           }}
@@ -104,7 +104,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               "@context": "https://schema.org",
               "@type": "WebSite",
               "url": siteUrl,
-              "name": "Karahan Dienstleistungen",
+              "name": "KD Dienstleistungen",
               "potentialAction": {
                 "@type": "SearchAction",
                 "target": `${siteUrl}/search?q={search_term_string}`,
