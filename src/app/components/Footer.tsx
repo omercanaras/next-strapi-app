@@ -18,7 +18,7 @@ export default function Footer() {
   const { companyAddress, pageLinks, socialLinks, logo } = footerData;
 
   return (
-    <footer className="bg-green-900 text-white py-10 px-4">
+    <footer className="bg-[#0D0D0D] backdrop-blur-sm text-white py-4 px-6">
       <div className="max-w-6xl mx-auto flex flex-col items-center text-center space-y-6">
         {/* Şirket Bilgisi */}
         <div className="text-sm text-gray-300">

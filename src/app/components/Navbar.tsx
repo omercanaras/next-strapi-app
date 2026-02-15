@@ -25,7 +25,7 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 bg-white shadow">
       {/* ÜST BAR */}
-      <div className="bg-green-900 text-white text-sm py-2 px-4">
+      <div className="bg-[#0D0D0D] backdrop-blur-sm text-white py-4 px-6">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row md:justify-between md:items-center text-center md:text-left">
           {/* Logo */}
           <div className="flex flex-col items-center">

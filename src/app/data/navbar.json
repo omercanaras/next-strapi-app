@@ -1,49 +1,49 @@
 {
     "logo": {
-      "titleLeft": "K",
-      "titleRight": "D",
-      "subtitle": "KD Dienstleistungen"
+      "titleLeft": "M",
+      "titleRight": "P",
+      "subtitle": "Melek Pansiyon"
     },
     "contactInfo": [
       {
         "type": "time",
         "icon": "FaClock",
-        "text": "Mo–Fr. 9 – 17 Uhr",
+        "text": "Mo–Fr. 11 – 10 Uhr",
         "enabled": true
       },
       {
         "type": "phone",
         "icon": "FaPhone",
-        "text": "0173 795 09 33",
-        "href": "tel:01737950933",
+        "text": "05443097193",
+        "href": "tel:05443097193",
         "enabled": true
       },
       {
         "type": "email",
         "icon": "FaEnvelope",
-        "text": "info@ka-dl.de",
-        "href": "mailto:info@ka-dl.de",
+        "text": "info@melekpansiyon.com",
+        "href": "mailto:info@melekpansiyon.com",
         "enabled": true
       }
     ],
     "menuItems": [
       {
-        "label": "Über uns",
+        "label": "Hakkımızda",
         "href": "/ueberuns",
         "enabled": true
       },
       {
-        "label": "Leistungen",
+        "label": "Hizmetlerimiz",
         "href": "/leistungen",
         "enabled": true
       },
       {
         "label": "Angebotsanfrage",
         "href": "/angebotsanfrage",
-        "enabled": true
+        "enabled": false
       },
       {
-        "label": "Rückrufservice",
+        "label": "Geri arama hizmeti",
         "href": "/rufservice",
         "enabled": true
       }

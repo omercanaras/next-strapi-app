@@ -1,5 +1,5 @@
 {
-    "companyAddress": "KD Dienstleistungen GbR, Heinrich-Böll-Weg 7, 72474 Winterlingen",
+    "companyAddress": "Melek Pansiyon, Gelibolu Güneyli",
     "pageLinks": [
       {
         "label": "Startseite",
@@ -35,16 +35,16 @@
       {
         "platform": "email",
         "icon": "FaEnvelope",
-        "href": "mailto:info@ka-dl.de",
+        "href": "mailto:info@melekpansiyon.com",
         "ariaLabel": "E-Mail senden",
         "enabled": true
       }
     ],
     "logo": {
-      "left": "K",
+      "left": "M",
       "separator": "|",
-      "right": "D",
-      "title": "KD DIENSTLEISTUNGEN"
+      "right": "P",
+      "title": "MELEK PANSIYON"
     }
   }
   

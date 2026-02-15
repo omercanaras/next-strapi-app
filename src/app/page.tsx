@@ -28,82 +28,77 @@ export const metadata: Metadata = {
 };
 
 export default function HomePage() {
+  const images = [
+    "/images/room1.jpg",
+    "/images/room2.jpg",
+    "/images/room3.jpg",
+    "/images/room4.jpg",
+    "/images/room5.jpg",
+    "/images/room6.jpg",
+    "/images/room7.jpg",
+    "/images/room8.jpg",
+  ];
+
   return (
-    <main className="px-4 py-10 max-w-6xl mx-auto">
-      {/* Başlık */}
-      <h1 className="text-3xl md:text-4xl font-bold text-center mb-6">
-      KD Dienstleistungen – Ihr Alltagsbegleiter in Winterlingen
-      </h1>
+    <main className="pb-20">
+      {/* Hero Bölümü */}
+      {/* <section className="bg-gray-900 text-white py-20 text-center">
+        <h1 className="text-4xl md:text-5xl font-bold mb-3">
+          Melek Pansiyon
+        </h1>
+        <p className="text-lg opacity-90">
+          Konforlu odalar, huzurlu bir atmosfer ve sıcak bir karşılama.
+        </p>
+      </section> */}
 
-      <div className="mb-8 flex justify-center">
-        <Image
-          src="/images/alltag.jpeg"
-          alt="Alltagsbegleitung und Haushaltshilfe in Winterlingen"
-          width={800}
-          height={400}
-          className="w-full max-w-3xl h-auto object-contain object-center rounded-lg shadow-md"
-        />
-      </div>
+      {/* Galeri Bölümü */}
+      <section className="max-w-6xl mx-auto px-4 mt-16">
+        <h2 className="text-center text-3xl font-semibold mb-10">
+          Galeri – Odalarımızdan ve Pansiyonumuzdan Kareler
+        </h2>
 
-      {/* CTA Buton */}
-      <div className="text-center mb-10">
-        <Link
-          href="/rufservice"
-          className="inline-block bg-gray-900 text-white text-sm md:text-base px-6 py-3 rounded hover:bg-gray-800 transition"
-        >
-          Wir rufen Sie gerne zurück
-        </Link>
-      </div>
-
-      {/* Açıklama */}
-      <p className="text-center text-base md:text-lg text-gray-700 leading-relaxed mb-12 max-w-3xl mx-auto">
-        Ein sauberes und gepflegtes Zuhause schafft Wohlbefinden. Wir
-        unterstützen Sie mit individueller Alltagsbegleitung nach § 45a SGB XI –
-        zuverlässig, empathisch und flexibel. Wir verwenden hochwertige
-        Reinigungs- und Pflegeprodukte, gehen aber gern auf Ihre Materialwünsche
-        ein. Fordern Sie jetzt Ihr kostenloses und unverbindliches Angebot an!
-      </p>
-
-  
-      {/* <div className="flex flex-col sm:flex-row justify-center items-center gap-10 mb-12 text-center">
-      
-        <div>
-          <Image
-            src="/images/personal.jpeg"
-            alt="Geschultes Personal für Haushalt und Betreuung"
-            width={200}
-            height={200}
-            className="mx-auto w-32 sm:w-40 md:w-48 h-auto"
-          />
-          <h3 className="mt-4 font-semibold text-base sm:text-lg">
-            Geschultes Personal
-          </h3>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          {images.map((src, index) => (
+            <div key={index} className="overflow-hidden rounded-lg shadow-md">
+              <Image
+                src={src}
+                alt={`Galeri Görseli ${index + 1}`}
+                width={500}
+                height={300}
+                className="w-full h-64 object-cover hover:scale-105 transition duration-300"
+              />
+            </div>
+          ))}
         </div>
 
-     
-        <div>
-          <Image
-            src="/images/rundum_service.jpeg"
-            alt="Rundum-Service für Ihre Alltagsbegleitung"
-            width={200}
-            height={200}
-            className="mx-auto w-32 sm:w-40 md:w-48 h-auto"
-          />
-          <h3 className="mt-4 font-semibold text-base sm:text-lg">
-            Alles aus einer Hand
-          </h3>
+        {/* Daha Fazla Yükle */}
+        <div className="text-center mt-10">
+          <button className="px-6 py-3 bg-gray-900 text-white rounded hover:bg-gray-800 transition">
+            Daha Fazla Görsel Yükle
+          </button>
         </div>
-      </div> */}
+      </section>
 
-      {/* İkinci Buton */}
-      <div className="text-center">
-        <Link
-          href="/leistungen"
-          className="inline-block bg-gray-900 text-white text-sm md:text-base px-6 py-3 rounded hover:bg-gray-800 transition"
-        >
-          Unsere Leistungen
-        </Link>
-      </div>
+      {/* CTA / İletişim Bölümü */}
+      <section className="max-w-5xl mx-auto mt-20 px-4">
+        <div className="bg-[#0D0D0D] text-white p-10 rounded-xl text-center shadow-lg">
+          <h3 className="text-2xl font-semibold mb-4">
+            Rezervasyon veya Bilgi İçin Bize Ulaşın
+          </h3>
+
+          <p className="mb-6 text-gray-200">
+            Melek Pansiyon’da kendinizi evinizde hissedeceksiniz.  
+            Uygun fiyatlar ve konforlu bir konaklama için hemen iletişime geçin.
+          </p>
+
+          <Link
+            href="/iletisim"
+            className="inline-block bg-white text-gray-900 px-6 py-3 rounded font-semibold hover:opacity-90 transition"
+          >
+            İletişim
+          </Link>
+        </div>
+      </section>
     </main>
   );
 }
