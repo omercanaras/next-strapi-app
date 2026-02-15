@@ -14,7 +14,7 @@ export function TravelAboutSection() {
               }}
             >
               <img 
-                src="/travel-photo.jpeg" 
+                src="travel/travel-photo.jpeg" 
                 alt="Ömercan Aras"
                 className="w-full h-auto block"
                 style={{

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200" height="50" viewBox="-10 0 210 50" xmlns="http://www.w3.org/2000/svg">
+  
+  <!-- Prompt ~/ -->
+  <text x="-8" y="28" font-family="'SF Mono', 'Fira Code', 'Courier New', monospace" font-size="16" font-weight="400" fill="#888888">~/</text>
+  
+  <!-- ÖMERCAN -->
+  <text x="95" y="20" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="15" font-weight="600" letter-spacing="10" text-anchor="middle" fill="#fafafa">ÖMERCAN</text>
+  
+  <!-- ARAS -->
+  <text x="95" y="38" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="15" font-weight="300" letter-spacing="10" text-anchor="middle" fill="#fafafa">ARAS</text>
+  
+  <!-- Yanıp sönen imleç -->
+  <rect x="175" y="13" width="2" height="24" fill="#fafafa">
+    <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
+  </rect>
+  
+</svg>

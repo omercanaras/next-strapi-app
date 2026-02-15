@@ -14,7 +14,7 @@ export interface Destination {
       num: 1,
       title: "Tokyo Streets",
       desc: "Neon lights and ancient temples coexisting in perfect harmony.",
-      image: "/travel/japan.jpg",
+      image: "/travel/test.jpg",
       location: "Japan",
       year: "2024"
     },
@@ -22,7 +22,7 @@ export interface Destination {
       num: 2,
       title: "Amalfi Coast",
       desc: "Cliffside villages painted in pastel colors overlooking the Mediterranean.",
-      image: "/travel/italy.jpg",
+      image: "/travel/test2.jpg",
       location: "Italy",
       year: "2023"
     },
@@ -30,7 +30,7 @@ export interface Destination {
       num: 3,
       title: "Northern Lights",
       desc: "Dancing auroras across volcanic black sand beaches.",
-      image: "/travel/iceland.jpg",
+      image: "/travel/test3.jpg",
       location: "Iceland",
       year: "2023"
     }
