@@ -1,10 +1,8 @@
 // src/app/layout.tsx
 
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Space_Grotesk } from "next/font/google";
 import "./globals.css";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
 
 const geistSans = Geist({
   subsets: ["latin"],
@@ -16,106 +14,59 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://ka-dl.de';
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-space-grotesk",
+});
+
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://omercanaras.com";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl || 'https://ka-dl.de'),
+  metadataBase: new URL(siteUrl),
   title: {
-    default: 'KD Dienstleistungen – Alltagsbegleiter & Haushaltshilfe in Winterlingen',
-    template: '%s | KD Dienstleistungen',
+    default: "Ömercan Aras – Fullstack Engineer",
+    template: "%s | Ömercan Aras",
   },
   description:
-    'KD Dienstleistungen bietet Alltagsbegleitung und hauswirtschaftliche Tätigkeiten in Winterlingen. Zuverlässige Hilfe im Haushalt und Alltag mit Herz und Erfahrung.',
-  alternates: {
-    canonical: 'siteUrl',
-  },
+    "Fullstack Engineer specialized in Spring Boot, Angular, BPM and distributed systems.",
   openGraph: {
-    type: 'website',
+    type: "website",
     url: siteUrl,
-    title: 'KD Dienstleistungen – Haushaltshilfe in Winterlingen',
+    title: "Ömercan Aras – Fullstack Engineer",
     description:
-      'Professionelle Alltagsbegleitung und Haushaltshilfe in Winterlingen. Persönliche Betreuung und hauswirtschaftliche Unterstützung von KD Dienstleistungen.',
-    siteName: 'KD Dienstleistungen',
+      "Enterprise systems, BPM architectures and modern web applications.",
     images: [
       {
         url: `${siteUrl}/og-image.jpg`,
         width: 1200,
         height: 630,
-        alt: 'KD Dienstleistungen – Alltagsbegleiter und Haushaltshilfe in Winterlingen',
+        alt: "Ömercan Aras Portfolio",
       },
     ],
   },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'KD Dienstleistungen – Haushaltshilfe in Winterlingen',
-    description:
-      'Haushaltshilfe und Alltagsbegleitung in Winterlingen – zuverlässig, persönlich, engagiert. Jetzt Kontakt aufnehmen!',
-    creator: '@KD_winterlingen', // X hesabın yoksa silebilirsin
-    images: [`${siteUrl}/og-image.jpg`],
-  },
-  verification: {
-    // Google Search Console kodu buraya gelecek (Adım 9)
-     google: '27Bx7Frlptyj3gBd3_XNEDSLuRz-gqdOUOI9xJYAw0E',
-  },
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <html lang="de">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gray-50 text-gray-800`}>
-        <Navbar />
-        
-        {/* 👇 JSON-LD Structured Data */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "LocalBusiness",
-              "name": "KD Dienstleistungen",
-              "url": siteUrl,
-              "logo": `${siteUrl}/logo.png`, // logo varsa public klasöründe olmalı
-              "image": `${siteUrl}/og-image.jpg`,
-              "description": "KD Dienstleistungen bietet Haushaltshilfe und Alltagsbegleitung in Winterlingen und Umgebung.",
-              "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "Heinrich-Böll-Weg 7", 
-                "addressLocality": "Winterlingen",
-                "postalCode": "72474",
-                "addressCountry": "DE"
-              },
-              "telephone": "+49 173 795 09 33", 
-              "areaServed": {
-                "@type": "Place",
-                "name": "Winterlingen"
-              },
-              "sameAs": [
-                "https://www.instagram.com/KD_dienstleistungen",
-                "https://www.facebook.com/KD_dienstleistungen"
-              ]
-            }),
-          }}
+    <html lang="en">
+      <head>
+        {/* Archivo Black - Google Fonts'da next/font ile yok, link ile ekle */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link 
+          href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" 
+          rel="stylesheet" 
         />
-
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "WebSite",
-              "url": siteUrl,
-              "name": "KD Dienstleistungen",
-              "potentialAction": {
-                "@type": "SearchAction",
-                "target": `${siteUrl}/search?q={search_term_string}`,
-                "query-input": "required name=search_term_string"
-              }
-            }),
-          }}
-        />
-
-        <main className="min-h-screen">{children}</main>
-        <Footer />
+      </head>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} ${spaceGrotesk.variable} antialiased bg-black text-white`}
+      >
+        {children}
       </body>
     </html>
   );
