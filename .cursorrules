@@ -1,0 +1,36 @@
+# Proje: Ömercan Aras Portfolio
+
+## Tech Stack
+Next.js 14 App Router, Tailwind CSS, TypeScript, MDX
+
+## Klasör Yapısı
+src/
+├───app
+│   ├───(tech) - Ana portfolio (about, contact, work)
+│   └───(travel) - Seyahat blogu
+├───components - UI bileşenleri
+├───content - MDX içerikler
+├───data - Statik veriler
+├───lib - Utility fonksiyonlar
+└───styles - CSS dosyaları
+
+## Kurallar
+- Türkçe yorum yaz
+- Tailwind class kullan, inline style yazma
+- Fonksiyonel component kullan
+- Root font-size: 12.8px (%80 ölçek)
+
+## Responsive Tasarım
+- Mobile-first yaklaşım: önce mobil, sonra sm/md/lg/xl breakpoint'leri
+- Tailwind breakpoint'leri kullan: sm:640px, md:768px, lg:1024px, xl:1280px, 2xl:1536px
+- Touch-friendly: buton ve tıklanabilir alanlar min 44px yükseklik
+- Görseller ve grid'ler responsive: w-full, max-w-*, aspect-ratio, object-cover
+- Metin okunabilirliği: mobilde satır uzunluğu makul (max-w-prose), font-size uyumlu
+
+## UI: Minimal ve Modern
+- Az renk paleti: 1–2 ana renk + nötr (siyah/beyaz/gri), vurgu için tek accent
+- Bol beyaz alan (whitespace): padding/margin cömert, içerik sıkışık olmasın
+- Tipografi: tek font ailesi veya net hiyerarşi (başlık / gövde / caption)
+- Gölge ve border hafif: shadow-sm, border ince; aşırı dekorasyon yok
+- Flat veya çok hafif gradient; büyük radius yerine küçük (rounded-lg / rounded-xl)
+- İkon ve CTA net: az sayıda, anlamlı; gereksiz süsleme ekleme

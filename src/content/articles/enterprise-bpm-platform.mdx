@@ -1,0 +1,124 @@
+---
+title: "Enterprise BPM Platform"
+description: "End-to-end Business Process Management System, das täglich über 50.000 Workflows mit Echtzeit-Monitoring und adaptivem Case Management verarbeitet."
+date: "2024-01-15"
+tags: ["Camunda", "Spring Boot", "Angular"]
+readTime: "12 min"
+---
+
+# Über das Projekt
+
+In diesem Projekt haben wir eine Enterprise-BPM-Plattform (Business Process Management) entwickelt. Das System verwaltet täglich über 50.000 Workflows und bietet Echtzeit-Monitoring sowie adaptives Case Management. Das Projekt war ein kritischer Bestandteil der digitalen Transformation eines großen Finanzinstituts.
+
+Die Plattform automatisierte Geschäftsprozesse zwischen verschiedenen Abteilungen und reduzierte manuelle Vorgänge um 80%. Insbesondere Kreditantragsverfahren, Kunden-Onboarding und interne Genehmigungsmechanismen wurden in dieses System integriert.
+
+## Technische Architektur
+
+Das System basiert auf einer Microservices-Architektur und besteht aus folgenden Hauptkomponenten:
+
+- **Process Engine**: Camunda BPM 7.x-basierte Workflow-Engine
+- **API Gateway**: Request-Routing mit Spring Cloud Gateway
+- **Event Bus**: Asynchrone Kommunikation mit Apache Kafka
+- **Frontend**: Responsives Dashboard mit Angular 15
+
+## Technische Herausforderungen
+
+### Migration vom Legacy-System
+
+Die größte Herausforderung bei der Migration von JBPM zu Camunda war die Konvertierung bestehender Prozessdefinitionen. Über 200 aktive Prozessdefinitionen, Tausende von Tasks und Millionen von historischen Daten mussten nahtlos übertragen werden.
+
+Als Migrationsstrategie haben wir das "Strangler Fig Pattern" angewendet. Neue Prozesse wurden in Camunda gestartet, während alte Prozesse in JBPM weiter abgeschlossen wurden.
+```java
+@Service
+public class ProcessMigrationService {
+    
+    @Autowired
+    private RuntimeService runtimeService;
+    
+    @Autowired
+    private HistoryService historyService;
+    
+    @Transactional
+    public void migrateProcess(String oldProcessId) {
+        // Legacy-Daten abrufen
+        LegacyProcessData legacyData = legacyService.getProcessData(oldProcessId);
+        
+        // Neuen Prozess starten
+        ProcessInstance instance = runtimeService
+            .startProcessInstanceByKey("new-process-key")
+            .setVariable("migratedFrom", oldProcessId)
+            .setVariable("customerData", legacyData.getCustomerData())
+            .execute();
+            
+        // Audit-Log erstellen
+        auditService.logMigration(oldProcessId, instance.getId());
+    }
+}
+```
+
+### Hochvolumige Transaktionsverarbeitung
+
+Für über 50K tägliche Workflows war die Async-Executor-Konfiguration entscheidend. Die Standardeinstellungen waren unzureichend und verursachten Engpässe bei der Job-Ausführung.
+```yaml
+camunda:
+  bpm:
+    job-execution:
+      enabled: true
+      core-pool-size: 10
+      max-pool-size: 50
+      queue-capacity: 1000
+    history-level: audit
+    database:
+      schema-update: false
+```
+
+### Echtzeit-Monitoring
+
+Für das Operations-Team haben wir ein WebSocket-basiertes Dashboard entwickelt, um den aktuellen Status in Echtzeit anzuzeigen:
+```typescript
+@Injectable()
+export class ProcessMonitorService {
+  private socket$: WebSocketSubject<ProcessEvent>;
+  
+  connect(): Observable<ProcessEvent> {
+    this.socket$ = webSocket({
+      url: environment.wsUrl,
+      deserializer: msg => JSON.parse(msg.data)
+    });
+    
+    return this.socket$.pipe(
+      retry({ delay: 3000 }),
+      catchError(this.handleError)
+    );
+  }
+}
+```
+
+## Performance-Optimierungen
+
+Vor dem Go-Live haben wir umfangreiche Lasttests durchgeführt. Bei den ersten Tests lag die Response-Zeit bei etwa 800ms. Mit folgenden Optimierungen konnten wir diese auf unter 200ms reduzieren:
+
+1. **Datenbank-Indexierung**: Composite-Indizes für häufig abgefragte Spalten
+2. **Query-Optimierung**: N+1-Probleme behoben, Batch-Fetching implementiert
+3. **Caching**: Redis für Process-Definition und User-Task-Caching
+4. **Connection Pooling**: Optimiertes Connection-Management mit HikariCP
+
+## Ergebnisse
+
+Das Projekt wurde nach 8 Monaten Entwicklung erfolgreich in Produktion genommen. Die Metriken der ersten 6 Monate:
+
+- **99,9%** Verfügbarkeit (ohne geplante Wartung)
+- **50K+** tägliche Workflow-Verarbeitungskapazität
+- **200ms** durchschnittliche Response-Zeit (p95)
+- **80%** Reduzierung manueller Prozesse
+- **60%** Verbesserung der Prozessabschlusszeit
+
+## Lessons Learned
+
+Die wichtigsten Erkenntnisse aus diesem Projekt:
+
+**1. Frühzeitige Performance-Tests**: Performance-Tests von Beginn des Entwicklungsprozesses an vermeiden später große Refactorings.
+
+**2. Inkrementelle Migration**: Eine schrittweise Migration statt Big-Bang minimiert das Risiko und ermöglicht Rollback-Optionen.
+
+**3. Observability First**: Der Aufbau von Monitoring- und Alerting-Infrastruktur von Anfang an ermöglicht die schnelle Erkennung von Produktionsproblemen.
